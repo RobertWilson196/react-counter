@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Email from './Email';  // assumes a .js file by default
 
 class App extends Component {
   constructor() {
@@ -10,6 +11,7 @@ class App extends Component {
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
     this.resetCount = this.resetCount.bind(this);
+    this.setValue = this.setValue.bind(this);
     this.lowerValue = this.lowerValue.bind(this);
     this.raiseValue = this.raiseValue.bind(this);
     /*
@@ -38,20 +40,28 @@ class App extends Component {
     this.setState({value: this.state.value + 1});
     console.log(this.value);
   }
+  setValue(e) {
+    this.setState({value: +e.target.value});  // + in front of the string tries to make it a number
+  }
 
   render() {
     return (
       <div>
-        <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>-</button>
-        
-        <button onClick={this.raiseValue}>+1 Increment</button>
-        <button onClick={this.lowerValue}>-1 Increment</button>
+        <div className="form-group">
+          <input type="number" className="form-control" onChange={this.state.setValue} value={this.state.value}/>
+          <button className="btn btn-primary" onClick={this.raiseValue}>+1 Increment</button>
+          <button className="btn btn-primary" onClick={this.lowerValue}>-1 Increment</button>
+        </div>
 
-        <button onClick={this.resetCount}>Reset</button>
+        <button className="btn btn-primary" onClick={this.increment}>+</button>
+        <button className="btn btn-primary" onClick={this.decrement}>-</button>
+
+        
+        <button className="btn btn-primary" onClick={this.resetCount}>Reset</button>
         
         <h4>Increment: {this.state.value}</h4>
         <h1>{this.state.count}</h1>
+        <Email />
       </div>
     );
 
