@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Email from './Email';  // assumes a .js file by default
+import LoginForm from './LoginForm';
 
 class App extends Component {
   constructor() {
@@ -62,6 +63,7 @@ class App extends Component {
         <h4>Increment: {this.state.value}</h4>
         <h1>{this.state.count}</h1>
         <Email />
+        <LoginForm />
       </div>
     );
 

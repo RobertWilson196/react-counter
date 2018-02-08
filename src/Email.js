@@ -3,7 +3,12 @@ import React, {Component} from 'react';
 class Email extends Component {
     render(){
 
-        return <h1>Email!</h1>;
+        return (
+            <div className = "jumbotron">
+                <h1>Email!</h1>
+                <p>blahblah@blah.com</p>
+            </div>
+        )
     }
 }
 
