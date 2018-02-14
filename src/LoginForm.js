@@ -18,7 +18,7 @@ class LoginForm extends Component {
             </div>
             <div>
                 <input type="checkbox"/>
-                <label>Remember Me</label>
+                <label>Remember Me </label>
                 <button onClick={this.sendAlert} type="submit">Log In</button>
             </div>
         </form>
